@@ -1,4 +1,4 @@
-package enum
+package enums
 
 /*----------------------------
 Don't Change the value of enum

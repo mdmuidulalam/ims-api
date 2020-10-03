@@ -2,7 +2,7 @@ package services
 
 import (
 	config "imsapi/config"
-	enum "imsapi/src/enum"
+	enums "imsapi/src/enums"
 	"net/smtp"
 	"strings"
 )
@@ -14,7 +14,7 @@ type EmailService struct {
 
 // SendMail function sends email to other email address
 func (es *EmailService) SendMail(to []string, subject string, body string) {
-	if es.Config.SMTP.EnableService == enum.ServiceEnabled {
+	if es.Config.SMTP.EnableService == enums.ServiceEnabled {
 		message := []byte("To: " + strings.Join(to, ",") + "\r\n" +
 			"Subject: " + subject + "\r\n" +
 			"\r\n" + body)
